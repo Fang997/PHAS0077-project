@@ -1,0 +1,371 @@
+id,Type of closure,Type of change (Convert/close/merge/change names),Year of change
+10009,1,Close,2012
+10010,5,Open,
+10015,1,Close,2011
+10025,4,Open/merger,2013
+10027,1,Close,2013
+10043,1,Close,2012
+10050,5,Open,
+10054,5,Open,
+10064,1,Close,2008
+10066,1,Close,2013
+10137,3,"Service reduction, specialty clinics",
+10143,1,Close,2009
+10145,5,Open,
+10152,1,Close,2012
+10167,5,Open,
+11301,4,"Open, merger",
+24001,NA,"Open, Behavioral health",
+30017,1,Close,2008
+30018,1,Close,2005
+30019,1,Open,
+30060,1,Open,
+30067,1,Open,
+30100,3,"Open, merger",
+30102,NA,cardiac care only,
+30106,2,Closure reduction to surgical center,2002
+30126,1,Close,2013
+31303,5,Open,
+40021,3,close/Merged/relocated,2015
+40042,1,Close,2014
+40091,3,"Close, reduction of service and name change",
+40138,4,Open,
+40142,3,Merged/either converted to rehab and/or closed,2010
+50016,3,Open/merged multiple times,
+50046,5,Open,
+50111,5,Close,2014
+50173,1,Close,2013
+50188,4,Open/name different,
+50193,1,Close,
+50196,2,"Close, reduction of service",2016
+50219,4,"Merged, service uninterrupted",2011
+50264,4,"Merged, service uninterrupted",2013
+50277,4,"Open, name change",2013
+50325,1,Close,2007
+50349,2,"Close, reduction of service",2013
+50366,5,Open,
+50369,4,Open/name change,
+50385,1,Close,2014
+50435,2,"Close, reduction of service",2014
+50447,2,"Close, reduction of service",2017
+50448,5,Open,
+50476,5,Open,
+50531,1,Close,
+50545,1,Close,2014
+50578,1,Close,2007
+50583,5,Open,
+50584,4,"Open, name change",
+50601,1,Close,2008
+50618,NA,Open,
+50644,1,Close,
+50680,4,"Merged, in service",
+50693,1,Close,2008
+50694,4,Merged/in service,
+50720,3,Close/long term care,2012
+50725,1,Close/later bought and became Silver Lake/probably disruption,2010
+50732,NA,"Open, specialty only",
+50733,5,Open,
+50749,5,Open,
+50752,4,"Open, name change",
+50753,1,Close,2008
+50768,1,Close,2013
+60018,5,Open,
+70001,4,"Open, merger and name change",
+70015,4,"Open, merger and name change",
+100015,3,Merged/changed name/part of it became a rehab,
+100024,NA,Probably open till 2017,
+100061,5,Open,
+100076,5,Close,2014
+100108,1,Close,2010
+100160,5,Open,
+100210,3,"Probably closed, currently ER only",
+100237,1,Close,2008
+100239,1,Close,2014
+100279,NA,Close,2016
+100298,NA,"Open, mental hospital",
+110020,4,Relocated/name changed,
+110059,1,Close,2010
+110112,5,Open,
+110163,NA,"Open, outpatient only",
+110183,1,Close,2014
+110186,NA,"Open, outpatient only",
+110203,NA,"Open, psychiatric only",
+110212,3,Converted to outpatient center,2015
+110219,4,"Open, name change",
+111309,1,Close,2013
+111315,1,Close,2013
+111321,1,Close,2014
+111322,1,Close,2013
+120010,1,Close,2011
+120027,1,Close,2011
+130024,5,Open,
+140051,4,"Open, name change",
+140066,1,Close,2011
+140075,1,Close,2009
+140094,4,Name changed/open,
+140151,1,Close,
+140207,1,Close,2008
+140301,3,Probably converted/outpatient only,
+140303,1,Close,2009
+150003,4,"Open, name change",
+150029,3,Probably converted/transitional care,
+150033,1,Close,
+150147,4,Name changed/open,
+150154,NA,Open,
+150163,5,Open,
+150164,NA,"Open, outpatient only",
+150170,3,Close merger and reduction,
+170001,5,Open,
+170033,3,"Close, Converted",2011
+170192,4,"Open, name change",
+170195,4,"Open, name change",
+180007,3,"Close, Converted/ER only",
+180117,1,Close,2015
+180149,4,"Open, merger and name change",
+181303,1,Close,2014
+190001,4,"Open, merger and name change",2014
+190009,1,Close,2014
+190037,1,Close,2006
+190078,5,Open,
+190122,1,Close,2015
+190131,1,Close,2009
+190135,5,Open,
+190161,4,"Open, name change",
+190175,NA,"Open, outpatient only",
+190191,3,"Close, converted to non-acute",
+190273,1,Close,2012
+190304,NA,"Open, rehab",
+200002,4,"Open, merger and name change",
+200025,NA,"Open, outpatient only",
+200032,5,Open,
+200040,4,"Open, merger and name change",
+210007,4,"Open, merger and name change",
+210025,1,Close,2009
+210054,4,"Open, merger and name change",
+220025,3,"Close, Converted/Outpatient only",2009
+220051,1,Close,2014
+220067,1,Close,2014
+220082,3,"Close, service reduction",2012
+220174,4,"Open, merger",2014
+230004,NA,"Open, likely outpatient only",
+230034,1,Close,2012
+230060,1,Close,2009
+230101,4,"Open, name change",
+230106,4,"Open, name change",
+230119,1,"Close, later becomes a nursing home",2007
+230135,3,"Closure, reduction to outpatient",2010
+230204,1,Close,2012
+230212,1,close/probably moved,
+230223,4,"Open, merger and name change",2007
+231335,4,"Open, merger and name change",2016
+240061,5,Open,
+240117,NA,"Open, in transition",
+250015,4,"Open, merger and name change",2014
+250023,1,Probably closed,
+250051,1,Close,2015
+250059,4,"Open, merger and name change",2015
+250125,1,"Close, moved",
+250149,1,Close,
+250152,NA,"Open, Rehab",
+251311,1,Close,
+260021,1,Close,2011
+260115,4,"Open, name change",
+260147,3,"Close, merger and reduction of service",2014
+260166,1,Close,2006
+260178,3,"Close, became children's hospital",2010
+260211,NA,"Open, specialty only",
+261304,1,Close,
+261326,4,"Open, name change",
+270002,5,Open,
+270011,5,Open,
+271310,5,"Open, CAH",
+281317,1,Close,
+290020,1,Close,
+290042,NA,"Open, SNF",
+310018,1,Close,
+310020,4,Merged/open,
+310026,3,"Close, reduction of service",
+310037,1,Close,2007
+310063,1,Close,2008
+310088,1,Close,2009
+310090,3,"Open, Converted to ER",
+310093,3,"Open, Converted to long term care",2008
+310105,1,Close,2008
+310116,5,Open,
+310120,2,"Close, reduction of service",2017
+320014,5,Open,
+320019,1,Close,2007
+320069,5,Open/CAH,
+320083,NA,Open/Not applicable,
+320087,4,"Open, merger and name change",
+330002,2,"Close, reduction to nursing home",
+330025,1,Close,
+330029,1,Close,
+330036,1,Close,
+330037,1,Close,2013
+330041,1,Close,2008
+330053,5,Open,
+330064,4,"Open, name change",
+330066,1,Close,2014
+330067,4,"Open, merger and name change",2014
+330072,4,"Open, merger",2008
+330075,1,Close,2009
+330091,4,"Open, merger",
+330133,1,Close,2008
+330152,1,Close,2014
+330159,4,"Open, merger",2011
+330177,4,"Open, merger and name change",2014
+330189,3,"Close, reduction to outpatient",
+330213,5,Open,
+330225,1,Close,
+330230,1,Close,2010
+330242,1,Close,2007
+330249,5,Open,
+330263,5,Open,
+330290,1,Close,2010
+330316,3,"Close, reduction of service",2013
+330357,1,Close,2009
+330389,4,"Open, name change",
+330390,1,Close,2010
+340012,4,"Open, merger",2013
+340025,NA,"Open, outpatient ",
+340035,4,"Open, name change",
+340038,4,"Open, probably merger",
+340055,3,"Close, reduction of service",
+340072,NA,"Open, outpatient",
+340121,4,"Open, probably merged",
+340153,4,"Open, name change",
+340160,4,"Open, merger and name change",
+341310,1,Close,2016
+341313,1,"Close, merged and moved to a different location",2017
+341321,2,"Close, reduction to postacute care",2013
+350003,4,"Open, move and name change",
+350009,4,"Open, moved within the same area/changed name",
+350030,4,"Open, name change",
+360038,1,Close,
+360062,5,Open,
+360100,4,"Open, merger",
+360101,1,Probably closed,2011
+360113,1,Probably closed,
+360115,5,Open,
+360116,4,"Open, name change",
+360130,NA,Open/ER and outpatient,
+360187,1,Close,2011
+360195,NA,"Open, probably outpatient only",
+360269,4,"Open, name change",
+360271,NA,"Open, outpatient center, name change",
+360347,3,"Close, merged and service reduction to outpatient",2012
+360350,4,"Open, merger and name change",
+360356,1,Close,2012
+361305,2,"Close, service reduction",2014
+370084,5,Open,
+370105,NA,"Open, Not applicable",
+370148,4,"Open, name change",
+370176,1,"Close, probably merged and moved",
+370232,4,"Open, merger and name change",
+390010,3,"Close, merged/converted to outpatient center",2008
+390023,1,Close,2009
+390095,1,Close,2012
+390108,1,Close due to merger,2012
+390122,4,"Open, merger ",2015
+390128,1,Close,2010
+390131,3,"Close, Merged/converted to outpatient center",2009
+390169,2,Close,2009
+390189,4,"Open, Merged/changed name",2012
+390246,4,"Open, merger",2018
+390285,3,"Close, converted",2007
+390286,1,Close,2007
+390302,4,"Open, merger and name change",
+390313,3,"Close, currently a nursing home",
+390318,4,"Open, name change",
+391311,2,"Open, currently an outpatient center ",
+420054,1,Close,2015
+420056,2,"Close, reduction to urgent care",2012
+420062,4,"Open, merger",
+420064,4,"Open, name change",
+430060,1,Close,2010
+430094,NA,"Open, name change",
+440019,1,Close,2008
+440047,4,"Open, merger and name change",2014
+440052,1,Close,2012
+440054,3,"Close, service reduction to snf",
+440064,4,"Open, merger and name change",2014
+440115,2,"Open, service reduction ",
+440141,4,"Open, merger",
+440174,1,Close,2014
+440186,5,Open,
+440217,5,Open,
+440226,4,"Open, name change",
+441312,1,Close,
+441317,4,"Open, name change",2016
+450005,2,"Close, reduction of service",
+450008,3,"Converted, merged/Not applicable",
+450031,4,"Open, name change",
+450059,4,"Open, name change",
+450123,1,Close,2012
+450126,1,Close,2017
+450188,1,Close,2015
+450191,4,"Open, name change",
+450214,NA,"Open, SNF",
+450224,4,"Open, name change",
+450234,1,Close,
+450239,5,Open,
+450270,4,"Open, merger and name change",
+450283,1,Close,2013
+450296,4,"Open, merger and name change",
+450315,1,"Close, may reopen",
+450373,2,"Close, reduction to outpatient",2014
+450378,1,Close,2008
+450438,1,Close,2012
+450446,5,Open,
+450497,1,"Close, but reopen in 2017",2015
+450530,5,Open,
+450547,5,Open,
+450591,4,"Open, merger and name change",
+450615,4,"Open, merger and name change",
+450646,5,Open,
+450683,1,Close,2013
+450715,4,"Open, merger and name change",
+450760,1,Close,2007
+450770,4,"Open, name change",
+450795,1,Close,
+450811,4,"Open, name change",
+450813,4,"Open, merged",2013
+450824,NA,Open,
+450830,5,Open,
+450832,3,"Close, merged and service reduction to LTC",2013
+450838,4,"Open, merged",2011
+450839,1,Close,2013
+450841,1,Close,
+450868,1,Close,
+450878,4,"Open, merged and expanded",
+451302,1,Close,2014
+460008,4,"Open, name change",
+490012,1,Close,2013
+490027,5,Open,
+490071,4,"Open, name change",
+490105,NA,"Open, mental health",
+490106,NA,"Open, psychiatric",
+490108,NA,Open,
+490109,NA,"Open, mental health",
+490134,NA,"Open, geropsychiatric",
+490135,NA,"Open, behavioral health",
+510018,5,"Open, CAH",
+510026,5,Open,
+510033,1,Close,2014
+510053,4,"Open, affiliation change",
+510067,3,"Close, service reduction",
+510085,5,Open,
+520064,1,Close,
+520170,4,"Open, name change",
+520173,5,Open,
+520199,1,"Close, may reopen",2016
+521306,NA,Open,
+530010,4,"Open, name change",
+670002,1,Close,2014
+670011,1,Close,2010
+670018,1,"Close, reopen in 2015 but probably partially",2014
+670021,4,"Open, name change",2011
+670029,5,Open,
+670052,4,"Open, merger and name change",2013
+670066,4,"Open, merger and name change",2015
