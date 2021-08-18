@@ -63,7 +63,7 @@ def identify_merger():
 
 
 def clean_hcris_before_2010(data):
-    """This function cleans the HCRIS data before 2010
+    """This function cleans the HCRIS data before 2010.
     Output: HCRIS data after cleaning"""
     # Match the variable names with hcris_2012 and clean the duplicates
     data.rename(columns={'provider': 'id'}, inplace=True)
@@ -75,3 +75,51 @@ def clean_hcris_before_2010(data):
     # reset index after cleaning the data
     data.reset_index(drop=True, inplace=True)
     return data
+
+
+def clean_hcris_after_2010(data):
+    """This function cleans the HCRIS data after 2010.
+    Output: HCRIS data after cleaning"""
+    data.rename(columns={'provider': 'id'}, inplace=True)
+    data = data.loc[:, ['id', 'employees',
+                        'beds', 'bed_days', 'medicare_days', 'medicaid_days', 'days', 'medicare_disch', 'medicaid_disch', 'discharges']]
+    data[data["id"].duplicated(keep="last") == True]
+    data.drop_duplicates(subset=['id'], keep='last', inplace=True)
+    data.sort_values(by='id', ascending=True, inplace=True)
+    # reset index after cleaning the data
+    data.reset_index(drop=True, inplace=True)
+    return data
+
+
+def imputation_method(method, X):
+    """This function provides different imputation methods to choose.
+    Output: Predictors after imputation"""
+    if method == 'knn':
+        imp = KNNImputer(n_neighbors=3, weights="uniform")
+        X_new = imp.fit_transform(X)
+    elif method == 'median':
+        imp = SimpleImputer(missing_values=np.nan, strategy='median')
+    elif method == 'mean':
+        imp = SimpleImputer(missing_values=np.nan, strategy='mean')
+    elif method == 'multivariate':
+        imp = IterativeImputer(max_iter=10, random_state=0)
+    imp.fit(X)
+    X_new = imp.transform(X)
+    return X_new, imp
+
+
+def fill_col_with_random(df1, column):
+    """This function fills df1's column with name 'column' with random data based on non-NaN data from 'column'.
+    Output: dataframe after random imputation"""
+    df2 = df1.copy()
+    df2[column] = df2[column].apply(lambda x: np.random.choice(
+        df2[column].dropna().values) if np.isnan(x) else x)
+    return df2
+
+
+def resampling(model, X_train, y_train):
+    """This function provides resampled data for approach(1).
+        Output: Resampled training set"""
+    X_resampled, y_resampled = model.fit_resample(X_train, y_train)
+    print(f"New class distribution is: {sorted(Counter(y_resampled).items())}")
+    return X_resampled, y_resampled
