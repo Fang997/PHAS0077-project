@@ -81,8 +81,6 @@ def clean_hcris_after_2010(data):
     """This function cleans the HCRIS data after 2010.
     Output: HCRIS data after cleaning"""
     data.rename(columns={'provider': 'id'}, inplace=True)
-    data = data.loc[:, ['id', 'employees',
-                        'beds', 'bed_days', 'medicare_days', 'medicaid_days', 'days', 'medicare_disch', 'medicaid_disch', 'discharges']]
     data[data["id"].duplicated(keep="last") == True]
     data.drop_duplicates(subset=['id'], keep='last', inplace=True)
     data.sort_values(by='id', ascending=True, inplace=True)
