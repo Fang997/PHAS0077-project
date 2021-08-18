@@ -41,7 +41,7 @@ from skopt import BayesSearchCV
 def identify_merger():
     """This function identifies merged/nonmerged hospitals from verified data,
      and return a dataframe with idenfication of mergers.
-    Output: verified data with a column 'merged' (0: non-merged; 1: merged)"""
+    Output: verified data with a new column 'merged' (0: non-merged; 1: merged)"""
 
     # Upload verified data from Lina as a dataframe
     verified_data = pd.read_csv('closures_verified_2019_04_short.csv')
@@ -60,3 +60,18 @@ def identify_merger():
                       'merged'] = 1
     print(verified_data)
     return verified_data
+
+
+def clean_hcris_before_2010(data):
+    """This function cleans the HCRIS data before 2010
+    Output: HCRIS data after cleaning"""
+    # Match the variable names with hcris_2012 and clean the duplicates
+    data.rename(columns={'provider': 'id'}, inplace=True)
+    data[data["id"].duplicated(keep="last") == True]
+    data.drop_duplicates(subset=['id'], keep='last', inplace=True)
+    # HCRIS data before 2010 don't have the column "medicaid_days"
+    data['medicaid_days'] = np.nan
+    data.sort_values(by='id', ascending=True, inplace=True)
+    # reset index after cleaning the data
+    data.reset_index(drop=True, inplace=True)
+    return data
