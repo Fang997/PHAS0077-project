@@ -36,3 +36,38 @@ from sklearn.metrics import precision_recall_curve, average_precision_score
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
 import seaborn as sns
 from imblearn.pipeline import Pipeline
+
+def grid_search_lr(sampling, X_test, y_test, X_train, y_train):
+     """This function uses grid search to find the hyperparameters with the best f1 score for Logistic regression.
+    Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
+    lr = LogisticRegression(solver='liblinear')
+    pipeline = Pipeline(steps=[['sampling', sampling],
+                               ['classifier', lr]])
+    param_grid_ = {'C': [
+        0.1, 1, 10, 100, 200, 500, 1000], 'penalty': ['l1', 'l2']}
+    param_grid_clf = {'classifier__C': [
+        0.1, 1, 10, 100, 200, 500, 1000], 'classifier__penalty': ['l1', 'l2']}
+    if sampling is None:
+        estimator = lr
+        param_grid = param_grid_
+    else:
+        estimator = pipeline
+        param_grid = param_grid_clf
+    # Fitting grid search to the train data with 5 folds
+    gridsearch = GridSearchCV(estimator=estimator,
+                              param_grid=param_grid,
+                              cv=StratifiedKFold(
+                                  n_splits=5, random_state=1, shuffle=True),
+                              scoring='f1')
+    gridsearch.fit(X_train, y_train)
+    y_pred = gridsearch.predict(X_test)
+    y_pred_proba = gridsearch.predict_proba(X_test)[:, 1]
+    print("Best: %f using %s" %
+          (gridsearch.best_score_, gridsearch.best_params_))
+    conf_matrix = confusion_matrix(y_test, y_pred)
+    # Calculating and printing the f1 score
+    f1_train = gridsearch.best_score_
+    f1_test = f1_score(y_test, y_pred)
+    print('The f1 score for the testing data:', f1_test)
+    auprc = average_precision_score(y_test, y_pred_proba)
+    return f1_train, f1_test, auprc, conf_matrix, gridsearch
