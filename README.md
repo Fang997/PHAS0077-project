@@ -15,7 +15,7 @@ $ pip install xgboost
 $ pip install imblearn
 ```
 
-## Structure of repostiory:
+# Structure of the repostiory:
 * Readme
 * gitignore
 * Data files (csv files)\
@@ -24,3 +24,5 @@ Files named beginning with 'ime_gme' are HCRIS data; 'closures_verified_2019_04_
 data_processing.py contains functions used for data processing.
 * grid_search.py\
 grid_search.py contains functions using GridSearchCV and pipeline to tune hyperparameters for different sampling methods.
+* Jupyternotebook files (ipynb files)\
+'Using HCRIS (approach 1).ipynb' and 'Using HCRIS (approach 2).ipynb' applied ML algorithms on HCRIS data using 2 different ways to resample the imbalance data respectively (see section 3.4 in my project). According to the results, approach 2 is the appropriate way to apply resampling methods (section 4.2.2).'Using multi-source data.ipynb' applied ML algorithms on the multi-source data using approach 2. You could run these ipynb files for results.
