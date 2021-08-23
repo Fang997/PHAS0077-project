@@ -7,12 +7,21 @@ This repository is for my project "using machine learning to predict hospital me
 
 **imblearn** package was used for undersampling and oversampling methods.
 
+**Numpy**, **pandas**, **seaborn** and **scikit-learn**  package are included in Anaconda and usually don't need to be reinstalled. If not included, install it with pip (pip install scikit-learn).
 
-## Install using `pip`:
-
+## Install using `pip` (recommend):
+Open your terminal such as git bash, browse to the directory where this file lives, and run
 ```
 $ pip install xgboost
 $ pip install imblearn
+```
+## Install using `conda`:
+```
+conda install -c conda-forge xgboost
+conda install -c anaconda py-xgboost
+```
+```
+conda install -c conda-forge imbalanced-learn
 ```
 
 # Structure of the repostiory:
