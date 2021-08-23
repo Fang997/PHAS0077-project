@@ -1,6 +1,6 @@
 # PHAS0077-project
 # Background
-This repository is for my project "using machine learning to predict hospital mergers". This project applied seven machine learning algorithms, namely Logistic Regression, Gaussian Naïve Bayes, Linear Discriminant Analysis, Random Forest, Decision Tree, XGBoost and K-Nearest Neighbor. Except XGBoost, all methods used **sklearn** package. Different sampling methods were used to find the best-performing one.
+This repository is for my project "using machine learning to predict hospital mergers". This project applied seven machine learning algorithms, namely Logistic Regression, Gaussian Naïve Bayes, Linear Discriminant Analysis, Random Forest, Decision Tree, XGBoost and K-Nearest Neighbor. Except XGBoost (**xgboost** package created by Tianqi Chen), all methods used **sklearn** package. Different sampling methods were used to find the best-performing one.
 
 # Installation
 **xgboost** and **imblearn** package was required to install for this project.
