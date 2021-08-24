@@ -82,7 +82,21 @@ def clean_hcris_after_2010(data):
     Output: HCRIS data after cleaning"""
     data.rename(columns={'provider': 'id'}, inplace=True)
     data[data["id"].duplicated(keep="last") == True]
+    data['state'] = data['state'].astype(str)
+    data['status_cat'] = LabelEncoder().fit_transform(data['status'])
+    data['state_cat'] = LabelEncoder().fit_transform(data['state'])
+    data['city_cat'] = LabelEncoder().fit_transform(data['city'])
+    data['county_cat'] = LabelEncoder().fit_transform(data['county'])
+    data = data.drop(['status', 'state', 'city', 'county', 'prvdr_num', 'fyb', 'fybstr', 'fye',
+                     'fyestr', 'hospital_name', 'street_addr', 'zip_code', 'medicaid_hmo_discharges'], axis=1)
     data.drop_duplicates(subset=['id'], keep='last', inplace=True)
+    # Drop columns with >60% nan
+    for column in data:
+        count_nan = data[column].isna().sum()
+        nan_pct = count_nan/len(data[column])*100
+        print(f"{column} has {round(nan_pct,2)}% nan")
+        if nan_pct > 60:
+            data = data.drop(column, axis=1)
     data.sort_values(by='id', ascending=True, inplace=True)
     # reset index after cleaning the data
     data.reset_index(drop=True, inplace=True)
