@@ -76,9 +76,19 @@ def clean_hcris_before_2010(data):
     data.reset_index(drop=True, inplace=True)
     return data
 
-
 def clean_hcris_after_2010(data):
     """This function cleans the HCRIS data after 2010.
+    Output: HCRIS data after cleaning"""
+    data.rename(columns={'provider': 'id'}, inplace=True)
+    data[data["id"].duplicated(keep="last") == True]
+    data.drop_duplicates(subset=['id'], keep='last', inplace=True)
+    data.sort_values(by='id', ascending=True, inplace=True)
+    # reset index after cleaning the data
+    data.reset_index(drop=True, inplace=True)
+    return data
+
+def clean_hcris_after_2012(data):
+    """This function cleans the HCRIS data after 2012.
     Output: HCRIS data after cleaning"""
     data.rename(columns={'provider': 'id'}, inplace=True)
     data[data["id"].duplicated(keep="last") == True]
@@ -94,7 +104,6 @@ def clean_hcris_after_2010(data):
     for column in data:
         count_nan = data[column].isna().sum()
         nan_pct = count_nan/len(data[column])*100
-        print(f"{column} has {round(nan_pct,2)}% nan")
         if nan_pct > 60:
             data = data.drop(column, axis=1)
     data.sort_values(by='id', ascending=True, inplace=True)
