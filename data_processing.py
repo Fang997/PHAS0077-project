@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import warnings
 from pandas.plotting import scatter_matrix
-from sklearn import metrics
+from sklearn import metrics, pipeline
+from sklearn import ensemble
 import seaborn as sn
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
@@ -35,7 +35,6 @@ from sklearn.metrics import precision_recall_curve, average_precision_score
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
 import seaborn as sns
 from imblearn.pipeline import Pipeline
-from skopt import BayesSearchCV
 
 
 def identify_merger():
@@ -64,6 +63,7 @@ def identify_merger():
 
 def clean_hcris_before_2010(data):
     """This function cleans the HCRIS data before 2010.
+    Input: HCRIS data
     Output: HCRIS data after cleaning"""
     # Match the variable names with hcris_2012 and clean the duplicates
     data.rename(columns={'provider': 'id'}, inplace=True)
@@ -78,6 +78,7 @@ def clean_hcris_before_2010(data):
 
 def clean_hcris_after_2010(data):
     """This function cleans the HCRIS data after 2010.
+    Input: HCRIS data
     Output: HCRIS data after cleaning"""
     data.rename(columns={'provider': 'id'}, inplace=True)
     data[data["id"].duplicated(keep="last") == True]
@@ -89,6 +90,7 @@ def clean_hcris_after_2010(data):
 
 def clean_hcris_after_2012(data):
     """This function cleans the HCRIS data after 2012.
+    Input: HCRIS data
     Output: HCRIS data after cleaning"""
     data.rename(columns={'provider': 'id'}, inplace=True)
     data[data["id"].duplicated(keep="last") == True]
@@ -114,6 +116,7 @@ def clean_hcris_after_2012(data):
 
 def imputation_method(method, X):
     """This function provides different imputation methods to choose.
+    Input: imputation method, predictors
     Output: Predictors after imputation"""
     if method == 'knn':
         imp = KNNImputer(n_neighbors=3, weights="uniform")
@@ -131,6 +134,7 @@ def imputation_method(method, X):
 
 def fill_col_with_random(df1, column):
     """This function fills df1's column with name 'column' with random data based on non-NaN data from 'column'.
+    Input: dataframe
     Output: dataframe after random imputation"""
     df2 = df1.copy()
     df2[column] = df2[column].apply(lambda x: np.random.choice(
@@ -140,7 +144,8 @@ def fill_col_with_random(df1, column):
 
 def resampling(model, X_train, y_train):
     """This function provides resampled data for approach(1).
-        Output: Resampled training set"""
+    Input: resampling method, predictors, outcome variables
+    Output: Resampled training set"""
     X_resampled, y_resampled = model.fit_resample(X_train, y_train)
     print(f"New class distribution is: {sorted(Counter(y_resampled).items())}")
     return X_resampled, y_resampled
