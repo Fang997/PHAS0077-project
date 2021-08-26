@@ -116,7 +116,7 @@ def clean_hcris_after_2012(data):
 
 def imputation_method(method, X):
     """This function provides different imputation methods to choose.
-    Input: imputation method, predictors
+    Input: imputation method (i.e., mean, median, knn and multivariate), predictors
     Output: Predictors after imputation"""
     if method == 'knn':
         imp = KNNImputer(n_neighbors=3, weights="uniform")
@@ -134,8 +134,8 @@ def imputation_method(method, X):
 
 def fill_col_with_random(df1, column):
     """This function fills df1's column with name 'column' with random data based on non-NaN data from 'column'.
-    Input: dataframe
-    Output: dataframe after random imputation"""
+    Input: a dataframe
+    Output: the dataframe after random imputation"""
     df2 = df1.copy()
     df2[column] = df2[column].apply(lambda x: np.random.choice(
         df2[column].dropna().values) if np.isnan(x) else x)
@@ -144,8 +144,8 @@ def fill_col_with_random(df1, column):
 
 def resampling(model, X_train, y_train):
     """This function provides resampled data for approach(1).
-    Input: resampling method, predictors, outcome variables
-    Output: Resampled training set"""
+    Input: resampling method(e.g., SMOTE, SVMSMOTE, BorderlineSMOTE, ADASYN), predictors, outcome variables
+    Output: Resampled predictors and outcome variables"""
     X_resampled, y_resampled = model.fit_resample(X_train, y_train)
     print(f"New class distribution is: {sorted(Counter(y_resampled).items())}")
     return X_resampled, y_resampled
