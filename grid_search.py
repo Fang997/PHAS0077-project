@@ -40,6 +40,7 @@ from imblearn.pipeline import Pipeline
 
 def grid_search_lr(sampling, X_test, y_test, X_train, y_train):
     """This function uses grid search to find the hyperparameters with the best f1 score for Logistic regression.
+    Input: resampling method (if there is one), training and test predictors and outcome variables.
     Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
     lr = LogisticRegression(solver='liblinear')
     pipeline = Pipeline(steps=[['sampling', sampling],
@@ -76,6 +77,7 @@ def grid_search_lr(sampling, X_test, y_test, X_train, y_train):
 
 def grid_search_lda(sampling, X_test, y_test, X_train, y_train):
     """This function uses grid search to find the hyperparameters with the best f1 score for LinearDiscriminantAnalysis.
+    Input: resampling method (if there is one), training and test predictors and outcome variables.
     Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
     lr = LogisticRegression(solver='liblinear')
     lda = LinearDiscriminantAnalysis()
@@ -117,6 +119,7 @@ def grid_search_lda(sampling, X_test, y_test, X_train, y_train):
 
 def grid_search_knn(sampling, X_test, y_test, X_train, y_train):
     """This function uses grid search to find the hyperparameters with the best f1 score for KNN.
+    Input: resampling method (if there is one), training and test predictors and outcome variables.
     Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
     knn = KNeighborsClassifier()
     pipeline = Pipeline(steps=[['sampling', sampling],
@@ -150,8 +153,10 @@ def grid_search_knn(sampling, X_test, y_test, X_train, y_train):
     auprc = average_precision_score(y_test, y_pred_proba)
     return f1_train, f1_test, auprc, conf_matrix, gridsearch
 
+
 def grid_search_dt(sampling, X_test, y_test, X_train, y_train):
     """This function uses grid search to find the hyperparameters with the best f1 score for Decision Tree.
+    Input: resampling method (if there is one), training and test predictors and outcome variables.
     Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
     dt = DecisionTreeClassifier()
     pipeline = Pipeline(steps=[['sampling', sampling],
@@ -193,8 +198,10 @@ def grid_search_dt(sampling, X_test, y_test, X_train, y_train):
     auprc = average_precision_score(y_test, y_pred_proba)
     return f1_train, f1_test, auprc, conf_matrix, gridsearch
 
+
 def grid_search_rf(sampling, X_test, y_test, X_train, y_train):
     """This function uses grid search to find the hyperparameters with the best f1 score for Random Forest.
+    Input: resampling method (if there is one), training and test predictors and outcome variables.
     Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
     rf = RandomForestClassifier()
     pipeline = Pipeline(steps=[['sampling', sampling],
@@ -233,8 +240,10 @@ def grid_search_rf(sampling, X_test, y_test, X_train, y_train):
     auprc = average_precision_score(y_test, y_pred_proba)
     return f1_train, f1_test, auprc, conf_matrix, gridsearch
 
+
 def grid_search_xgb(sampling, X_test, y_test, X_train, y_train):
     """This function uses grid search to find the hyperparameters with the best f1 score for XGBoost.
+    Input: resampling method (if there is one), training and test predictors and outcome variables.
     Output: training f1, test f1, auprc, confusion matrix and the best classifier"""
     xgboost = XGBClassifier()
     pipeline = Pipeline(steps=[['sampling', sampling],
