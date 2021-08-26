@@ -6,6 +6,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.impute import KNNImputer
 from sklearn.impute import IterativeImputer
 
+
 def identify_merger():
     """This function identifies merged/nonmerged hospitals from verified data,
      and return a dataframe with idenfication of mergers.
@@ -45,6 +46,7 @@ def clean_hcris_before_2010(data):
     data.reset_index(drop=True, inplace=True)
     return data
 
+
 def clean_hcris_after_2010(data):
     """This function cleans the HCRIS data after 2010.
     Input: HCRIS data
@@ -56,6 +58,7 @@ def clean_hcris_after_2010(data):
     # reset index after cleaning the data
     data.reset_index(drop=True, inplace=True)
     return data
+
 
 def clean_hcris_after_2012(data):
     """This function cleans the HCRIS data after 2012.
